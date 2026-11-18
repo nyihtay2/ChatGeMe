@@ -93,6 +93,6 @@ app.post('/api/chat', async (req, res) => {
   }
 });
 
-app.get('*', (_req, res) => res.sendFile(path.join(__dirname, 'public', 'index.html')));
+app.get('/{*splat}', (_req, res) => res.sendFile(path.join(__dirname, 'public', 'index.html')));
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`ChatGeMe listening on ${port}`));
